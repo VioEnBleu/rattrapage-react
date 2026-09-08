@@ -18,9 +18,7 @@ export function useFavorites() {
   }
 
   function removeFavorite(index) {
-    const next = [...favorites];
-    next.splice(index, 1);
-    setFavorites(next);
+    setFavorites(favorites.filter((i) => i !== index));
   }
 
   function isFavorite(id) {
