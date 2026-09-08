@@ -11,7 +11,7 @@ export function FavoritesView({ favorites, onRemove }) {
         <li key={pokemon.id} className="favorite-row">
           <img src={pokemon.sprites.front_default} alt={pokemon.name} />
           <span className="name">{pokemon.name}</span>
-          <button onClick={() => onRemove(index)}>Retirer</button>
+          <button onClick={() => onRemove(pokemon.id)}>Retirer</button>
         </li>
       ))}
     </ul>
