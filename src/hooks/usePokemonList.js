@@ -12,10 +12,11 @@ export function usePokemonList() {
     setLoading(true);
     fetchPokemonPage(offset, PAGE_SIZE).then((newOnes) => {
       const updated = pokemons.concat(newOnes);
+      setPokemons(updated);
       setOffset(offset + PAGE_SIZE);
       setLoading(false);
     });
-  }, []);
+  }, [ offset, pokemons]);
 
   useEffect(() => {
     loadMore();
