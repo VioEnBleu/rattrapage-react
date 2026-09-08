@@ -6,7 +6,7 @@ export function PokemonDetail({ id }) {
 
   useEffect(() => {
     fetchPokemonById(id).then(setPokemon);
-  }, []);
+  }, [id]);
 
   if (!pokemon) {
     return <aside className="detail-panel">Chargement...</aside>;
