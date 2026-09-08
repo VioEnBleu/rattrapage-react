@@ -10,7 +10,7 @@ export function useFavorites() {
 
   useEffect(() => {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(favorites));
-  }, []);
+  }, [favorites]);
 
   function addFavorite(pokemon) {
     if (favorites.some((f) => f.id === pokemon.id)) return;
