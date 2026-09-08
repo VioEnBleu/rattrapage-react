@@ -15,6 +15,9 @@ export function usePokemonList() {
       setPokemons(updated);
       setOffset(offset + PAGE_SIZE);
       setLoading(false);
+    }).catch((error) => {
+        alert("Impossible de charger les Pokémon. Vérifiez votre connexion.");
+        setLoading(false);
     });
   }, [ offset, pokemons]);
 
